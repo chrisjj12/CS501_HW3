@@ -1,7 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.code.findbugs:jsr305:2.0.1">
     <CLASSES>
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/2.0.1/516c03b21d50a644d538de0f0369c620989cd8f0/jsr305-2.0.1.jar!/" />
+=======
+      <root url="jar://$PROJECT_DIR$/../../CW501_Assignment2/Lect2_TASimpleMat/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/2.0.1/516c03b21d50a644d538de0f0369c620989cd8f0/jsr305-2.0.1.jar!/" />
+>>>>>>> cdb2d217afc83808383a7044f80ce76258f142bd
     </CLASSES>
     <JAVADOC />
     <SOURCES />
