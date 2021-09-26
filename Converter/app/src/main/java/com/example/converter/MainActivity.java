@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int tempF, boolean b) {
                 textViewTempF.setText(String.valueOf(tempF));
+                textViewTempC.setText(String.valueOf((Integer.valueOf(String.valueOf(tempF))-32) * .5556));
             }
 
             @Override
