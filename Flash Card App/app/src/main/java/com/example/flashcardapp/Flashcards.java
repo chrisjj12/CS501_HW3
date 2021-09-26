@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Flashcards extends AppCompatActivity {
@@ -20,21 +22,31 @@ public class Flashcards extends AppCompatActivity {
     private Button btnSubmitAnswer;
     private EditText editTextNumber;
 
-    int op1_min = 10;
-    int op1_max = 144;
+    final int op1_min = 10;
+    final int op1_max = 144;
 
-    int op2_min = 0;
-    int op2_max = 12;
+    final int op2_min = 0;
+    final int op2_max = 12;
 
-    int mult_answer = 0;
-    int div_answer = 0;
+    int countMul = 0; //counter of multiplication problems
+    int countDiv = 0; //counter of division problems
+    int countCorrect = 0; //counter of correct questions
+    int buttonclicked = 0;
 
-    int count_mult = 0;
-    int count_div = 0;
-    int count_correct = 0;
+    int result = 0;
 
     //Generate random int value from 50 to 100
 
+    /*
+    * Logic:
+    * onCreate early binds
+    * no numbers yet
+    * btnStartGame starts a game -> generates legit operand numbers and operator
+    * user enters editTextNumber
+    * pressing btnSubmitAnswer checks if the problem answer == editTextNumber
+    * && moves onto next problem up until 10 problems
+    * must check if mult < 6 and div < 6
+    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,89 +66,108 @@ public class Flashcards extends AppCompatActivity {
         btnStartGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // generate the problem upon click
-
+//                int operChoose = choose_operator();
+//                firstAnswer = firstQuestion(operChoose);
+                game();
             }
         });
         btnSubmitAnswer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // generate probelm again upon click
+                // generate problem again upon click
                 //until counter equals 9
+                if (buttonclicked == 0) {
+                    Integer USERANSWER = Integer.parseInt(editTextNumber.getText().toString());
+                    answerChecker(USERANSWER);
+                    game();
+                }
+                else if (buttonclicked > 0 && buttonclicked < 9){
+                    Integer USERANSWER = Integer.parseInt(editTextNumber.getText().toString());
+                    answerChecker(USERANSWER);
+                    game();
+                }
+                else if (buttonclicked == 9){
+                    Toast.makeText(getApplicationContext(), "You got " + Integer.toString(countCorrect) + " out of 10 correct.", Toast.LENGTH_LONG).show();
+                }
+                buttonclicked++;
             }
         });
 
-
-
-
-
-
-        print in text view count_correct / 10
+//        print in text view count_correct / 10
     }
+
+//    private int firstQuestion(int operChoose) {
+//        int answer = 0;
+//        if (operChoose == 0) {
+//            mult();
+//        } else if (operChoose == 1) {
+//            div();
+//        }
+//        return answer;
+//    }
+
+    /* choosing operator: 0 is multiplication; 1 is division */
     private int choose_operator() {
         int randomNum = ThreadLocalRandom.current().nextInt(0, 2);
         return randomNum;
     }
 
-    private void mult (Integer Answer, int Rand1, int Rand2){
-        mult_answer = Rand1 * Rand2;
-        if (Answer == mult_answer) {
-            txtUserinfo.setText("Correct!");
-            count_correct++;
-        } else {
-            txtUserinfo.setText("Incorrect!");
-        }
-        count_mult++;
+    /* displays operators for multiplication question */
+    private void mult() {
+        int random1 = (int)Math.floor(Math.random()*(op1_max-op1_min+1)+op1_min);
+        int random2 = (int)Math.floor(Math.random()*(op2_max-op2_min+1)+op2_min);
+
+        text_OP1.setText(String.valueOf(random1));
+        text_OP2.setText(String.valueOf(random2));
+        operator.setText("×");
+
+        result = random1 * random2;
     }
 
-    private void div (Integer Answer, int Rand1, int Rand2) {
+    /* displays operators for division question */
+    private void div() {
         int random1;
         int random2;
-        while ((Rand2 != 0) || (Rand1 % Rand2 != 0)) {
+
+        // error checking for divisible question with int answer AND no divide by zero
+        do {
             random1 = (int)Math.floor(Math.random()*(op1_max-op1_min+1)+op1_min);
             random2 = (int)Math.floor(Math.random()*(op2_max-op2_min+1)+op2_min);
-        }
-        if (Rand2 != 0) {
-            while ((Rand1 % Rand2 != 0) || Rand2 !=0) {
-                if (Answer == mult_answer) {
-                    txtUserinfo.setText("Correct!");
-                    count_correct++;
+        } while ((random1 % random2 != 0) || (random2 == 0));
 
-                } else {
-                    txtUserinfo.setText("Incorrect!");
-                }
-                count_div++;
-            }
-        }
+        text_OP1.setText(String.valueOf(random1));
+        text_OP2.setText(String.valueOf(random2));
+        operator.setText("÷");
 
+        result = random1 / random2;
     }
 
-    private void game (){
-        final Integer USERANSWER = Integer.parseInt(editTextNumber.getText().toString());
-        for (int i = 0; i <= 10; i++){
-            int random_op1 = (int)Math.floor(Math.random()*(op1_max-op1_min+1)+op1_min);
-            int random_op2 = (int)Math.floor(Math.random()*(op2_max-op2_min+1)+op2_min);
+    private void game(){
 
-            int operChoose = choose_operator();
+        int operChoose = choose_operator();
 
-            if (operChoose == 0) {
-                if (count_mult > 5) {
-                    div(USERANSWER, random_op1, random_op2);
-                }
-                else {
-                    mult(USERANSWER, random_op1, random_op2);
-                }
-            }
+        if ((operChoose == 0) && (countMul < 5)) { //case where we get multiplication and it's not full
+            mult();
+            countMul++;
+        } else if ((operChoose == 0) && (countMul == 5)) { //case where we get multiplication but it's full
+            div();
+            countDiv++;
+        } else if ((operChoose == 1) && (countDiv < 5)) { //case where we get division and it's not full
+            div();
+            countDiv++;
+        } else if ((operChoose == 1) && (countDiv == 5)) { //case where get division and it's full
+            mult();
+            countMul++;
+        }
+    }
 
+    private void answerChecker(Integer USERANSWER) {
 
-            else if(operChoose == 1) {
-                if (count_div > 5) {
-                    mult(USERANSWER, random_op1, random_op2);
-                }
-                else {
-                    div(USERANSWER, random_op1, random_op2);
-                }
-            }
+        if (USERANSWER == result) {
+            countCorrect++;
+            txtUserinfo.setText("Good job! Onto the next.");
+        } else if (USERANSWER != result) {
+            txtUserinfo.setText("Incorrect!");
         }
     }
 }

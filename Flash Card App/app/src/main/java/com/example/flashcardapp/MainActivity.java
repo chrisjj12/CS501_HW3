@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
                 if (isGood) {
                     Intent flashCardsActivity = new Intent(getApplicationContext(), Flashcards.class);
                     startActivity(flashCardsActivity);
+                    Toast.makeText(getApplicationContext(), "Welcome USERNAME. Please Start Basic Math.", Toast.LENGTH_LONG).show();
+
                 }
             }
         });
