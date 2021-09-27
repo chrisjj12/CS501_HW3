@@ -1,5 +1,6 @@
 package com.example.flashcardapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -62,12 +63,13 @@ public class Flashcards extends AppCompatActivity {
         editTextNumber = (EditText) findViewById(R.id.editTextNumber);
 
 
-
         btnStartGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                int operChoose = choose_operator();
-//                firstAnswer = firstQuestion(operChoose);
+                buttonclicked = 0;
+                countMul = 0;
+                countDiv = 0;
+                countCorrect = 0;
                 game();
             }
         });
@@ -76,35 +78,25 @@ public class Flashcards extends AppCompatActivity {
             public void onClick(View view) {
                 // generate problem again upon click
                 //until counter equals 9
-                if (buttonclicked == 0) {
-                    Integer USERANSWER = Integer.parseInt(editTextNumber.getText().toString());
+                Integer USERANSWER = Integer.parseInt(editTextNumber.getText().toString());
+                if (buttonclicked < 9) {
                     answerChecker(USERANSWER);
                     game();
                 }
-                else if (buttonclicked > 0 && buttonclicked < 9){
-                    Integer USERANSWER = Integer.parseInt(editTextNumber.getText().toString());
-                    answerChecker(USERANSWER);
-                    game();
-                }
+//                else if (buttonclicked > 0 && buttonclicked < 9){
+//                    Integer USERANSWER = Integer.parseInt(editTextNumber.getText().toString());
+//                    answerChecker(USERANSWER);
+//                    game();
+//                    Toast.makeText(getApplicationContext(), "You got " + Integer.toString(countCorrect) + " out of 10 correct.", Toast.LENGTH_LONG).show();
+//                }
                 else if (buttonclicked == 9){
+                    answerChecker(USERANSWER);
                     Toast.makeText(getApplicationContext(), "You got " + Integer.toString(countCorrect) + " out of 10 correct.", Toast.LENGTH_LONG).show();
                 }
                 buttonclicked++;
             }
         });
-
-//        print in text view count_correct / 10
     }
-
-//    private int firstQuestion(int operChoose) {
-//        int answer = 0;
-//        if (operChoose == 0) {
-//            mult();
-//        } else if (operChoose == 1) {
-//            div();
-//        }
-//        return answer;
-//    }
 
     /* choosing operator: 0 is multiplication; 1 is division */
     private int choose_operator() {
@@ -162,13 +154,69 @@ public class Flashcards extends AppCompatActivity {
     }
 
     private void answerChecker(Integer USERANSWER) {
-
         if (USERANSWER == result) {
             countCorrect++;
             txtUserinfo.setText("Good job! Onto the next.");
         } else if (USERANSWER != result) {
             txtUserinfo.setText("Incorrect!");
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putString("Op1", text_OP1.getText().toString());
+        outState.putString("Op2", text_OP2.getText().toString());
+        outState.putString("Operator", operator.getText().toString());
+        outState.putString("userinput", editTextNumber.getText().toString());
+
+        outState.putInt("countMul", countMul);
+        outState.putInt("countDiv", countDiv);
+        outState.putInt("countCorrect", countCorrect);
+        outState.putInt("buttonClicked", buttonclicked);
+        outState.putInt("result", result);
+
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        String Saved_op1;
+        Saved_op1 = savedInstanceState.getString("Op1");
+        text_OP1.setText(Saved_op1);
+
+        String Saved_op2;
+        Saved_op2 = savedInstanceState.getString("Op2");
+        text_OP2.setText(Saved_op2);
+
+        String Saved_operator;
+        Saved_operator = savedInstanceState.getString("Operator");
+        operator.setText(Saved_operator);
+
+        String Saved_userinput;
+        Saved_userinput = savedInstanceState.getString("userinput");
+        editTextNumber.setText(Saved_userinput);
+
+        int Saved_countmul;
+        Saved_countmul = savedInstanceState.getInt("countMul");
+        countMul = Saved_countmul;
+
+        int Saved_countdiv;
+        Saved_countdiv = savedInstanceState.getInt("countDiv");
+        countDiv = Saved_countdiv;
+
+        int Saved_countcorrect;
+        Saved_countcorrect = savedInstanceState.getInt("countCorrect");
+        countCorrect = Saved_countcorrect;
+
+        int Saved_buttonclicked;
+        Saved_buttonclicked = savedInstanceState.getInt("buttonClicked");
+        buttonclicked = Saved_buttonclicked;
+
+        int Saved_result;
+        Saved_result = savedInstanceState.getInt("result");
+        result = Saved_result;
     }
 }
 
