@@ -8,86 +8,118 @@
 
     <EditText
         android:id="@+id/billAmount"
-        android:layout_width="330dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="331dp"
+        android:layout_height="61dp"
+        android:background="@color/blue"
+        android:digits="0123456789"
         android:ems="10"
         android:hint="Enter Amount"
-        android:inputType="numberDecimal"
+        android:inputType="number"
+        android:textColor="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.612"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.135" />
 
     <TextView
         android:id="@+id/tipPercentage"
-        android:layout_width="70dp"
-        android:layout_height="41dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="520dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:gravity="center_vertical|right"
         android:text="15%"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/idTip"
         app:layout_constraintEnd_toStartOf="@+id/selectTip"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/billAmount"
         app:layout_constraintTop_toBottomOf="@+id/billAmount"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.683" />
 
     <TextView
         android:id="@+id/idTip"
-        android:layout_width="70dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginStart="8dp"
         android:gravity="center_vertical|right"
         android:text="Tip"
+        android:textSize="17dp"
         app:layout_constraintBottom_toTopOf="@+id/idTotal"
-        app:layout_constraintEnd_toStartOf="@+id/tipAmount"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/billAmount"
-        app:layout_constraintTop_toBottomOf="@+id/tipPercentage"
-        app:layout_constraintVertical_bias="0.625" />
+        app:layout_constraintStart_toStartOf="@+id/tipPercentage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.903" />
 
     <TextView
         android:id="@+id/idTotal"
-        android:layout_width="70dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="372dp"
         android:gravity="center_vertical|right"
         android:text="Total"
+        android:textSize="17dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/billAmount" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/idTip"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
     <TextView
         android:id="@+id/tipAmount"
-        android:layout_width="240dp"
+        android:layout_width="260dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="44dp"
+        android:background="@color/orange"
         android:gravity="center"
         android:text="$0.00"
-        app:layout_constraintBottom_toTopOf="@+id/totalAmount"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/billAmount"
-        app:layout_constraintVertical_bias="0.847" />
+        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintStart_toEndOf="@+id/idTip"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.384" />
 
     <TextView
         android:id="@+id/totalAmount"
-        android:layout_width="240dp"
+        android:layout_width="260dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="372dp"
+        android:background="@color/orange"
         android:gravity="center"
         android:text="$0.00"
+        android:textSize="17dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.266"
-        app:layout_constraintStart_toEndOf="@+id/idTotal" />
+        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintStart_toEndOf="@+id/idTotal"
+        app:layout_constraintTop_toBottomOf="@+id/tipAmount"
+        app:layout_constraintVertical_bias="0.078" />
 
     <SeekBar
         android:id="@+id/selectTip"
-        android:layout_width="244dp"
-        android:layout_height="40dp"
+        android:layout_width="264dp"
+        android:layout_height="56dp"
+        android:progressTint="@color/orange"
+        android:thumbTint="@color/orange"
         app:layout_constraintBottom_toTopOf="@+id/tipAmount"
-        app:layout_constraintEnd_toEndOf="@+id/billAmount"
-        app:layout_constraintTop_toBottomOf="@+id/billAmount" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.823"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/billAmount"
+        app:layout_constraintVertical_bias="0.648" />
+
+    <TextView
+        android:id="@+id/viewBillAmount"
+        android:layout_width="291dp"
+        android:layout_height="56dp"
+        android:gravity="center_vertical|left"
+        android:text=""
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/billAmount"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.134" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
