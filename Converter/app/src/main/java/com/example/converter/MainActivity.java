@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewTempC;
     private TextView textViewF;
     private TextView textViewTempF;
-    private int newtempC;
-    private int newtempF;
+    private double newtempC;
+    private double newtempF;
     private TextView msg;
 
 
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         {
             @Override
             public void onProgressChanged(SeekBar seekBar, int tempC, boolean b) {
-                newtempF = (int) (Integer.valueOf(String.valueOf(tempC))*1.8 + 32);
+                newtempF = (double) (Integer.valueOf(String.valueOf(tempC))*1.8 + 32);
                 textViewTempC.setText(String.valueOf(tempC));
                 textViewTempF.setText(String.valueOf(newtempF));
                 if(tempC < 12){
@@ -61,14 +61,16 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                seekBarF.setProgress(newtempF);
+                //changes
+//                Integer a = new Integer(newtempF);
+                seekBarF.setProgress((int)newtempF);
             }
         });
 
         seekBarF.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int tempF, boolean b) {
-                newtempC = (int) ((Integer.valueOf(String.valueOf(tempF))-32) * .5556);
+                newtempC = (double) ((Integer.valueOf(String.valueOf(tempF))-32) * .5556);
                 textViewTempF.setText(String.valueOf(tempF));
                 textViewTempC.setText(String.valueOf(newtempC));
                 if(tempF < 53){
@@ -87,7 +89,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                seekBarC.setProgress(newtempC);
+//                Integer b = new Integer(newtempC);
+//                seekBarC.setProgress((int) b.doubleValue());
+                seekBarC.setProgress((int)newtempC);
             }
         });
     }
