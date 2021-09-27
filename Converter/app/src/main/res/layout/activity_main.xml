@@ -11,100 +11,94 @@
 
     <LinearLayout
 
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dip" >
+        android:padding="10dip">
 
         <TextView
             android:id="@+id/textViewC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Celcius"
             android:layout_gravity="center"
-            android:textSize="50sp"
             android:layout_marginTop="40dp"
             android:textColor="@color/black"
-            />
+            android:textSize="50sp"
+            android:text="@string/Celcius" />
+
 
         <SeekBar
+            android:id="@+id/seekBarC"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
-            android:scaleX = "2"
-            android:scaleY = "2"
             android:max="100"
             android:min="0"
             android:progress="0"
-            android:id="@+id/seekBarC"
-            />
+            android:scaleX="2"
+            android:scaleY="2" />
 
         <TextView
             android:id="@+id/textViewTempC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
-            android:maxLength="5"
             android:layout_gravity="center"
-            android:textSize="50sp"
             android:layout_marginTop="40dp"
+            android:maxLength="5"
+            android:text="0"
             android:textColor="@color/black"
-            />
+            android:textSize="50sp" />
     </LinearLayout>
 
     <LinearLayout
 
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="446dp"
         android:orientation="vertical"
-        android:padding="10dip" >
+        android:padding="10dip">
 
         <TextView
             android:id="@+id/textViewF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fahrenheit"
             android:layout_gravity="center"
-            android:textSize="50sp"
             android:layout_marginTop="40dp"
+            android:text="@string/Fahrenheit"
             android:textColor="@color/black"
-            />
+            android:textSize="50sp" />
 
         <SeekBar
+            android:id="@+id/seekBarF"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
-            android:scaleX = "2"
-            android:scaleY = "2"
             android:max="212"
             android:progress="32"
-            android:id="@+id/seekBarF"
-            />
+            android:scaleX="2"
+            android:scaleY="2" />
 
         <TextView
             android:id="@+id/textViewTempF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="32"
-            android:maxLength="5"
             android:layout_gravity="center"
-            android:textSize="50sp"
             android:layout_marginTop="40dp"
+            android:maxLength="5"
+            android:text="32"
             android:textColor="@color/black"
-            />
+            android:textSize="50sp" />
 
         <TextView
             android:id="@+id/textViewIntMsg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Interesting Message"
             android:layout_gravity="center"
-            android:textSize="20sp"
             android:layout_marginTop="40dp"
+            android:text="Interesting Message"
             android:textColor="@color/black"
-            />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
