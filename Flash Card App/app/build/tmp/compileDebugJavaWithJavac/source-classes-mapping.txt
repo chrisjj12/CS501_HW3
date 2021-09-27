@@ -1,0 +1,9 @@
+com/example/flashcardapp/BuildConfig.java
+ com.example.flashcardapp.BuildConfig
+com/example/flashcardapp/Flashcards.java
+ com.example.flashcardapp.Flashcards
+ com.example.flashcardapp.Flashcards$1
+ com.example.flashcardapp.Flashcards$2
+com/example/flashcardapp/MainActivity.java
+ com.example.flashcardapp.MainActivity
+ com.example.flashcardapp.MainActivity$1
