@@ -94,6 +94,7 @@ public class Flashcards extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "You got " + Integer.toString(countCorrect) + " out of 10 correct.", Toast.LENGTH_LONG).show();
                 }
                 buttonclicked++;
+                editTextNumber.setText("");
             }
         });
     }
