@@ -10,65 +10,86 @@
         android:id="@+id/loginTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="149dp"
         android:text="Flashcardz"
         android:textAlignment="viewStart"
         android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.288"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.196" />
 
     <TextView
         android:id="@+id/loginTitleUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="23dp"
+        android:layout_marginBottom="50dp"
         android:text="Username:"
         android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/loginUser"
+        app:layout_constraintBottom_toTopOf="@+id/loginTitlePass"
         app:layout_constraintEnd_toStartOf="@+id/loginUser" />
 
     <TextView
         android:id="@+id/loginTitlePass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="316dp"
         android:text="Password:"
         android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/loginPass"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/loginPass" />
 
     <EditText
         android:id="@+id/loginUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="298dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="300dp"
+        android:layout_marginEnd="14dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="@+id/btnLoginSubmit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/loginTitleUser"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/loginPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="12dp"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginUser" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/loginTitlePass"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnLoginSubmit"
         android:layout_width="220dp"
         android:layout_height="104dp"
-        android:layout_marginBottom="88dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginBottom="50dp"
         android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/loginVerification"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginCreds" />
+
+    <TextView
+        android:id="@+id/loginCreds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.63" />
+
+    <TextView
+        android:id="@+id/loginVerification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="37dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
