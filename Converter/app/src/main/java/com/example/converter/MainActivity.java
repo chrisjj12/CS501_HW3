@@ -10,12 +10,14 @@ import android.widget.TextView;
 import java.time.temporal.Temporal;
 
 public class MainActivity extends AppCompatActivity {
-    SeekBar seekBarC;
-    SeekBar seekBarF;
-    TextView textViewC;
-    TextView textViewTempC;
-    TextView textViewF;
-    TextView textViewTempF;
+    private SeekBar seekBarC;
+    private SeekBar seekBarF;
+    private TextView textViewC;
+    private TextView textViewTempC;
+    private TextView textViewF;
+    private TextView textViewTempF;
+    private int newtempC;
+    private int newtempF;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +37,11 @@ public class MainActivity extends AppCompatActivity {
         {
             @Override
             public void onProgressChanged(SeekBar seekBar, int tempC, boolean b) {
+                newtempF = (int) (Integer.valueOf(String.valueOf(tempC))*1.8 + 32);
                 textViewTempC.setText(String.valueOf(tempC));
-                textViewTempF.setText(String.valueOf((Integer.valueOf(String.valueOf(tempC))*1.8 + 32)));
+                textViewTempF.setText(String.valueOf(newtempF));
+
+
             }
 
             @Override
@@ -46,15 +51,18 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                seekBarF.setProgress(newtempF);
             }
         });
 
         seekBarF.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int tempF, boolean b) {
+                newtempC = (int) ((Integer.valueOf(String.valueOf(tempF))-32) * .5556);
                 textViewTempF.setText(String.valueOf(tempF));
-                textViewTempC.setText(String.valueOf((Integer.valueOf(String.valueOf(tempF))-32) * .5556));
+                //textViewTempC.setText(String.valueOf((Integer.valueOf(String.valueOf(tempF))-32) * .5556));
+                textViewTempC.setText(String.valueOf(newtempC));
+
             }
 
             @Override
@@ -64,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                seekBarC.setProgress(newtempC);
             }
         });
     }
