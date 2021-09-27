@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int tempF, boolean b) {
                 newtempC = (int) ((Integer.valueOf(String.valueOf(tempF))-32) * .5556);
                 textViewTempF.setText(String.valueOf(tempF));
-                //textViewTempC.setText(String.valueOf((Integer.valueOf(String.valueOf(tempF))-32) * .5556));
                 textViewTempC.setText(String.valueOf(newtempC));
 
             }
