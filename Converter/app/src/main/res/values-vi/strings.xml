@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Converter</string>
+    <string name="Celcius">Độ C</string>
+    <string name="Fahrenheit">độ F</string>
+</resources>

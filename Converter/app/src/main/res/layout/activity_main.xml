@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dip">
+
+        <TextView
+            android:id="@+id/textViewC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/black"
+            android:textSize="50sp"
+            android:text="@string/Celcius" />
+
+
+        <SeekBar
+            android:id="@+id/seekBarC"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:max="100"
+            android:min="0"
+            android:progress="0"
+            android:scaleX="2"
+            android:scaleY="2" />
+
+        <TextView
+            android:id="@+id/textViewTempC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:maxLength="5"
+            android:text="0"
+            android:textColor="@color/black"
+            android:textSize="50sp" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="446dp"
+        android:orientation="vertical"
+        android:padding="10dip">
+
+        <TextView
+            android:id="@+id/textViewF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:text="@string/Fahrenheit"
+            android:textColor="@color/black"
+            android:textSize="50sp" />
+
+        <SeekBar
+            android:id="@+id/seekBarF"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:max="212"
+            android:progress="32"
+            android:scaleX="2"
+            android:scaleY="2" />
+
+        <TextView
+            android:id="@+id/textViewTempF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:maxLength="5"
+            android:text="32"
+            android:textColor="@color/black"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/textViewIntMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:text="Interesting Message"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
+

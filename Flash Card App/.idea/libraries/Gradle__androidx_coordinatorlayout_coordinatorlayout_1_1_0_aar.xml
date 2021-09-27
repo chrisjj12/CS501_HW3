@@ -1,6 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.coordinatorlayout:coordinatorlayout:1.1.0@aar">
     <ANNOTATIONS>
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/daf60890667c2c1f4f7951bda1ccd740/transformed/coordinatorlayout-1.1.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
@@ -11,6 +12,18 @@
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.coordinatorlayout/coordinatorlayout/1.1.0/a15529ac349d76a872ae5ef42b84c320c456cd7f/coordinatorlayout-1.1.0-sources.jar!/" />
+=======
+      <root url="jar://$PROJECT_DIR$/../../CW501_Assignment2/Lect2_TASimpleMat/caches/transforms-3/daf60890667c2c1f4f7951bda1ccd740/transformed/coordinatorlayout-1.1.0/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../CW501_Assignment2/Lect2_TASimpleMat/caches/transforms-3/daf60890667c2c1f4f7951bda1ccd740/transformed/coordinatorlayout-1.1.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../CW501_Assignment2/Lect2_TASimpleMat/caches/transforms-3/daf60890667c2c1f4f7951bda1ccd740/transformed/coordinatorlayout-1.1.0/res" />
+      <root url="file://$PROJECT_DIR$/../../CW501_Assignment2/Lect2_TASimpleMat/caches/transforms-3/daf60890667c2c1f4f7951bda1ccd740/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../CW501_Assignment2/Lect2_TASimpleMat/caches/modules-2/files-2.1/androidx.coordinatorlayout/coordinatorlayout/1.1.0/a15529ac349d76a872ae5ef42b84c320c456cd7f/coordinatorlayout-1.1.0-sources.jar!/" />
+>>>>>>> fc5dbc05a82c24f9c77a93393ec4bbb99ad72926
     </SOURCES>
   </library>
 </component>

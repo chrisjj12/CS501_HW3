@@ -1,6 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.activity:activity:1.2.4@aar">
     <ANNOTATIONS>
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/a2fec87436ed4b48e2cd27f2bec00bd8/transformed/jetified-activity-1.2.4/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
@@ -11,6 +12,18 @@
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.activity/activity/1.2.4/2572345ff3e71e4e97140b01423cb80765b5b3e5/activity-1.2.4-sources.jar!/" />
+=======
+      <root url="jar://$PROJECT_DIR$/../../CW501_Assignment2/Lect2_TASimpleMat/caches/transforms-3/a2fec87436ed4b48e2cd27f2bec00bd8/transformed/jetified-activity-1.2.4/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../CW501_Assignment2/Lect2_TASimpleMat/caches/transforms-3/a2fec87436ed4b48e2cd27f2bec00bd8/transformed/jetified-activity-1.2.4/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../CW501_Assignment2/Lect2_TASimpleMat/caches/transforms-3/a2fec87436ed4b48e2cd27f2bec00bd8/transformed/jetified-activity-1.2.4/res" />
+      <root url="file://$PROJECT_DIR$/../../CW501_Assignment2/Lect2_TASimpleMat/caches/transforms-3/a2fec87436ed4b48e2cd27f2bec00bd8/transformed/jetified-activity-1.2.4/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../CW501_Assignment2/Lect2_TASimpleMat/caches/modules-2/files-2.1/androidx.activity/activity/1.2.4/2572345ff3e71e4e97140b01423cb80765b5b3e5/activity-1.2.4-sources.jar!/" />
+>>>>>>> fc5dbc05a82c24f9c77a93393ec4bbb99ad72926
     </SOURCES>
   </library>
 </component>
