@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -12,6 +14,7 @@ public class MainActivity<Int> extends AppCompatActivity {
 
     private TextView totalCalories, mealItems, servingSize, bruschetta, salad, pasta, pizza, coke;
     private EditText serving1, serving2, serving3, serving4, serving5;
+    private Button calculateButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +22,7 @@ public class MainActivity<Int> extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         totalCalories = (TextView) findViewById(R.id.totalCalories);
+        calculateButton = (Button) findViewById(R.id.calculateButton);
 //        mealItems = (TextView) findViewById(R.id.mealItems);
 //        servingSize = (TextView) findViewById(R.id.servingSize);
 //        bruschetta = (TextView) findViewById(R.id.bruschetta);
@@ -33,75 +37,54 @@ public class MainActivity<Int> extends AppCompatActivity {
         serving4 = (EditText) findViewById(R.id.serving4);
         serving5 = (EditText) findViewById(R.id.serving5);
 
-        serving1.addTextChangedListener(textWatcher);
-        serving2.addTextChangedListener(textWatcher);
-        serving3.addTextChangedListener(textWatcher);
-        serving4.addTextChangedListener(textWatcher);
-        serving5.addTextChangedListener(textWatcher);
+
+        calculateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int food1, food2, food3, food4, food5;
+
+                if (serving1.getText().toString().equals("")){
+                    food1 = 0;
+                } else{
+                    food1 = Integer.parseInt(serving1.getText().toString());
+                }
+
+                if (serving2.getText().toString().equals("")){
+                    food2  = 0;
+                } else{
+                    food2 = Integer.parseInt(serving2.getText().toString());
+                }
+
+                if (serving3.getText().toString().equals("")){
+                    food3  = 0;
+                } else{
+                    food3 = Integer.parseInt(serving3.getText().toString());
+                }
+
+                if (serving4.getText().toString().equals("")){
+                    food4 = 0;
+                } else{
+                    food4 = Integer.parseInt(serving4.getText().toString());
+                }
+
+                if (serving5.getText().toString().equals("")){
+                    food5 = 0;
+                } else{
+                    food5 = Integer.parseInt(serving5.getText().toString());
+                }
+
+                calculate(food1, food2, food3, food4, food5);
+
+            }
+        });
 
     }
 
-    private final TextWatcher textWatcher= new TextWatcher() {
-        int finalCalories = 0;
-        String calories;
-        @Override
-        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+    private void calculate(int f1, int f2, int f3, int f4, int f5){
+        int finalCalories = (f1 * 50) + (f2 * 95) + (f3 * 310) + (f4 * 285) + (f5 * 140);
+        totalCalories.setText(String.valueOf(finalCalories));
 
-        }
-
-        @Override
-        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-        }
-
-        @Override
-        public void afterTextChanged(Editable editable) {
-            //get the changed serving size amounts for each food item
-            // multiply each serving size with the corresponding amount of calories and add it to the total calorie amount
-            if (!serving1.getText().toString().isEmpty()) {
-                calories = serving1.getText().toString();
-
-            } else{
-                calories = "0";
-            }
-            finalCalories += Integer.parseInt(calories) * 50;
-
-            if (!serving2.getText().toString().isEmpty()) {
-                calories = serving2.getText().toString();
-
-            } else{
-                calories = "0";
-            }
-            finalCalories += Integer.parseInt(calories) * 95;
-
-            if (!serving3.getText().toString().isEmpty()) {
-                calories = serving3.getText().toString();
-
-            } else{
-                calories = "0";
-            }
-            finalCalories += Integer.parseInt(calories) * 310;
-
-            if (!serving4.getText().toString().isEmpty()) {
-                calories = serving4.getText().toString();
-
-            } else{
-                calories = "0";
-            }
-            finalCalories += Integer.parseInt(calories) * 285;
-
-            if (!serving5.getText().toString().isEmpty()) {
-                calories = serving5.getText().toString();
-
-            } else{
-                calories = "0";
-            }
-            finalCalories += Integer.parseInt(calories) * 140;
-
-            totalCalories.setText(String.valueOf(finalCalories));
-
-        }
-    };
+    }
 
 
 }

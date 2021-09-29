@@ -9,134 +9,226 @@
     <TextView
         android:id="@+id/totalCalories"
         android:layout_width="194dp"
-        android:layout_height="59dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginBottom="56dp"
+        android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:hint="Total:"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="85dp" />
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/servingSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/mealItems"
-        android:layout_width="115dp"
-        android:layout_height="59dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="188dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="47dp"
+        android:fontFamily="sans-serif-medium"
         android:gravity="bottom|left"
         android:text="Meal items:"
+        android:textColor="@color/lavender"
         android:textSize="15dp"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="220dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bruschetta"
+        app:layout_constraintEnd_toStartOf="@+id/servingSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/servingSize"
-        android:layout_width="116dp"
-        android:layout_height="59dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="53dp"
+        android:fontFamily="sans-serif-medium"
         android:gravity="bottom|center"
         android:text="Servings:"
+        android:textColor="@color/lavender"
         android:textSize="15dp"
-        tools:layout_editor_absoluteX="236dp"
-        tools:layout_editor_absoluteY="220dp" />
+        app:layout_constraintBottom_toTopOf="@+id/serving1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mealItems"
+        app:layout_constraintTop_toBottomOf="@+id/totalCalories" />
 
     <TextView
         android:id="@+id/bruschetta"
-        android:layout_width="182dp"
-        android:layout_height="59dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center|left"
         android:text="Bruschetta\nCalories: 50"
+        android:textColor="@color/navy"
         android:textSize="15dp"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="313dp" />
+        app:layout_constraintBottom_toTopOf="@+id/salad"
+        app:layout_constraintEnd_toStartOf="@+id/serving1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mealItems" />
 
     <TextView
         android:id="@+id/salad"
-        android:layout_width="182dp"
-        android:layout_height="60dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="14dp"
+        android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center|left"
         android:text="Salad\nCalories: 95"
+        android:textColor="@color/navy"
         android:textSize="15dp"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="382dp" />
+        app:layout_constraintBottom_toTopOf="@+id/pasta"
+        app:layout_constraintEnd_toStartOf="@+id/serving2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bruschetta" />
 
     <TextView
         android:id="@+id/pasta"
-        android:layout_width="182dp"
-        android:layout_height="59dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="14dp"
+        android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center|left"
         android:text="Pasta\nCalories: 310"
+        android:textColor="@color/navy"
         android:textSize="15dp"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="452dp" />
+        app:layout_constraintBottom_toTopOf="@+id/pizza"
+        app:layout_constraintEnd_toStartOf="@+id/serving3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/salad" />
 
     <TextView
         android:id="@+id/pizza"
-        android:layout_width="182dp"
-        android:layout_height="59dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="13dp"
+        android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center|left"
         android:text="Pizza (Slice)\nCalories: 285"
+        android:textColor="@color/navy"
         android:textSize="15dp"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="522dp" />
+        app:layout_constraintBottom_toTopOf="@+id/coke"
+        app:layout_constraintEnd_toStartOf="@+id/serving4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pasta" />
 
     <TextView
         android:id="@+id/coke"
-        android:layout_width="182dp"
-        android:layout_height="59dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="89dp"
+        android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center|left"
         android:text="Coke\nCalories: 140"
+        android:textColor="@color/navy"
         android:textSize="15dp"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="591dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/serving5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pizza" />
 
     <EditText
         android:id="@+id/serving1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="19dp"
+        android:digits="0123456789"
         android:ems="10"
+        android:fontFamily="sans-serif-condensed"
         android:inputType="number"
-        tools:layout_editor_absoluteX="282dp"
-        tools:layout_editor_absoluteY="313dp" />
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/serving2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bruschetta"
+        app:layout_constraintTop_toBottomOf="@+id/servingSize" />
 
     <EditText
         android:id="@+id/serving2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="20dp"
+        android:digits="0123456789"
         android:ems="10"
+        android:fontFamily="sans-serif-condensed"
         android:inputType="number"
-        tools:layout_editor_absoluteX="282dp"
-        tools:layout_editor_absoluteY="382dp" />
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/serving3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/salad"
+        app:layout_constraintTop_toBottomOf="@+id/serving1" />
 
     <EditText
         android:id="@+id/serving3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="20dp"
+        android:digits="0123456789"
         android:ems="10"
+        android:fontFamily="sans-serif-condensed"
         android:inputType="number"
-        tools:layout_editor_absoluteX="282dp"
-        tools:layout_editor_absoluteY="452dp" />
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/serving4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pasta"
+        app:layout_constraintTop_toBottomOf="@+id/serving2" />
 
     <EditText
         android:id="@+id/serving4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="19dp"
+        android:digits="0123456789"
         android:ems="10"
+        android:fontFamily="sans-serif-condensed"
         android:inputType="number"
-        tools:layout_editor_absoluteX="282dp"
-        tools:layout_editor_absoluteY="522dp" />
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/serving5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pizza"
+        app:layout_constraintTop_toBottomOf="@+id/serving3" />
 
     <EditText
         android:id="@+id/serving5"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="16dp"
+        android:digits="0123456789"
         android:ems="10"
+        android:fontFamily="sans-serif-condensed"
         android:inputType="number"
-        tools:layout_editor_absoluteX="282dp"
-        tools:layout_editor_absoluteY="591dp" />
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/calculateButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/coke"
+        app:layout_constraintTop_toBottomOf="@+id/serving4" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/calculateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="258dp"
-        tools:layout_editor_absoluteY="658dp" />
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="25dp"
+        android:text="Calculate!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/serving5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
