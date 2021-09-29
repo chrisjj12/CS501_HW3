@@ -1,27 +1,8 @@
 # CS501_HW3
 
-## Multiple Choice
-
-3.1- Importing the View class is sufficient
-
-3.2- onClick
-
-3.3- addView
-
-3.4- this
-
-3.5- X.this
-
-3.6- getWindowManager( ).getDefaultDisplay( ).getSize( size );
-
-3.7- Context
-
-3.8- setRowCount
-
-3.9- setContentView
-
-3.10- Button b = new Button( this );
-
-3.11- LayoutParams
-
-3.12- setGravity
+# File Name Directory
+Converter: Worksheet Part 2 Temperature Converter App
+Flash Card: Worksheet Part 3
+Tip Calculator: Worksheet Part 4
+HW3_P23: Problem 23 of Chapter 2, Traffic Light Simulator App
+HW3_P29: Problem 29 of Chapter 2, Calorie Tracker App
