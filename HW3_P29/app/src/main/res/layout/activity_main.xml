@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/totalCalories"
+        android:layout_width="194dp"
+        android:layout_height="59dp"
+        android:gravity="center"
+        android:hint="Total:"
+        android:textSize="17dp"
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="85dp" />
+
+    <TextView
+        android:id="@+id/mealItems"
+        android:layout_width="115dp"
+        android:layout_height="59dp"
+        android:gravity="bottom|left"
+        android:text="Meal items:"
+        android:textSize="15dp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="220dp" />
+
+    <TextView
+        android:id="@+id/servingSize"
+        android:layout_width="116dp"
+        android:layout_height="59dp"
+        android:gravity="bottom|center"
+        android:text="Servings:"
+        android:textSize="15dp"
+        tools:layout_editor_absoluteX="236dp"
+        tools:layout_editor_absoluteY="220dp" />
+
+    <TextView
+        android:id="@+id/bruschetta"
+        android:layout_width="182dp"
+        android:layout_height="59dp"
+        android:gravity="center|left"
+        android:text="Bruschetta\nCalories: 50"
+        android:textSize="15dp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="313dp" />
+
+    <TextView
+        android:id="@+id/salad"
+        android:layout_width="182dp"
+        android:layout_height="60dp"
+        android:gravity="center|left"
+        android:text="Salad\nCalories: 95"
+        android:textSize="15dp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="382dp" />
+
+    <TextView
+        android:id="@+id/pasta"
+        android:layout_width="182dp"
+        android:layout_height="59dp"
+        android:gravity="center|left"
+        android:text="Pasta\nCalories: 310"
+        android:textSize="15dp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="452dp" />
+
+    <TextView
+        android:id="@+id/pizza"
+        android:layout_width="182dp"
+        android:layout_height="59dp"
+        android:gravity="center|left"
+        android:text="Pizza (Slice)\nCalories: 285"
+        android:textSize="15dp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="522dp" />
+
+    <TextView
+        android:id="@+id/coke"
+        android:layout_width="182dp"
+        android:layout_height="59dp"
+        android:gravity="center|left"
+        android:text="Coke\nCalories: 140"
+        android:textSize="15dp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="591dp" />
+
+    <EditText
+        android:id="@+id/serving1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="282dp"
+        tools:layout_editor_absoluteY="313dp" />
+
+    <EditText
+        android:id="@+id/serving2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="282dp"
+        tools:layout_editor_absoluteY="382dp" />
+
+    <EditText
+        android:id="@+id/serving3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="282dp"
+        tools:layout_editor_absoluteY="452dp" />
+
+    <EditText
+        android:id="@+id/serving4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="282dp"
+        tools:layout_editor_absoluteY="522dp" />
+
+    <EditText
+        android:id="@+id/serving5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="282dp"
+        tools:layout_editor_absoluteY="591dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="258dp"
+        tools:layout_editor_absoluteY="658dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
